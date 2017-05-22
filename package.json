@@ -48,7 +48,9 @@
     "test:cover": "rimraf .nyc_output/ && cross-env BABEL_ENV=cover npm run build:output && cross-env NYC_CWD=output nyc --reporter=lcov npm run _test",
     "test:debug": "npm run build:output -- -s inline && npm run _test -- --debug-brk",
     "test:func": "node src/tests/functional/run-parallel '--reporter spec src/tests/functional/main.js'",
-    "validate": "npm ls"
+    "validate": "npm ls",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "pre-commit": [
     "lint",
@@ -116,7 +118,7 @@
   },
   "dependencies": {
     "amqplib": "0.4.1",
-    "body-parser": "1.15.2",
+    "body-parser": "1.17.2",
     "classnames": "2.2.5",
     "compression": "1.6.2",
     "connect-modrewrite": "0.9.0",
@@ -125,7 +127,7 @@
     "debug": "github:localnerve/debug#worker-support",
     "diff-match-patch": "1.0.0",
     "es6-promise": "4.0.5",
-    "express": "4.14.0",
+    "express": "4.15.3",
     "express-error-handler": "localnerve/express-error-handler",
     "fluxible": "1.2.0",
     "fluxible-addons-react": "0.2.8",
@@ -146,17 +148,19 @@
     "react-swipe": "github:localnerve/react-swipe#v4.1.0",
     "remarkable": "1.7.1",
     "serialize-javascript": "1.3.0",
-    "serve-favicon": "2.3.0",
+    "serve-favicon": "2.4.3",
     "sitemap-xml": "localnerve/sitemap-xml",
     "superagent": "2.3.0",
     "sw-toolbox": "3.4.0",
     "treo": "0.5.1",
-    "web-push": "0.0.11"
+    "web-push": "0.0.11",
+    "snyk": "^1.30.1"
   },
   "devEngines": {
     "node": ">= 4.x"
   },
   "engines": {
     "node": "> = 4.x"
-  }
+  },
+  "snyk": true
 }
