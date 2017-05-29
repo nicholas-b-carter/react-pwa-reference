@@ -133,7 +133,7 @@
     "fluxible-router": "0.4.18",
     "inherits": "2.0.3",
     "lodash": "4.16.4",
-    "morgan": "1.7.0",
+    "morgan": "1.8.2",
     "nconf": "0.8.4",
     "nodemailer": "2.6.4",
     "object-assign": "4.1.0",
