@@ -48,7 +48,9 @@
     "test:cover": "rimraf .nyc_output/ && cross-env BABEL_ENV=cover npm run build:output && cross-env NYC_CWD=output nyc --reporter=lcov npm run _test",
     "test:debug": "npm run build:output -- -s inline && npm run _test -- --debug-brk",
     "test:func": "node src/tests/functional/run-parallel '--reporter spec src/tests/functional/main.js'",
-    "validate": "npm ls"
+    "validate": "npm ls",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "pre-commit": [
     "lint",
@@ -151,12 +153,14 @@
     "superagent": "2.3.0",
     "sw-toolbox": "3.4.0",
     "treo": "0.5.1",
-    "web-push": "0.0.11"
+    "web-push": "0.0.11",
+    "snyk": "^1.317.0"
   },
   "devEngines": {
     "node": ">= 4.x"
   },
   "engines": {
     "node": "> = 4.x"
-  }
+  },
+  "snyk": true
 }
